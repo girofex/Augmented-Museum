@@ -65,17 +65,9 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Starter Package\third_party\Unity Feathered Plane\ARFeatheredPlaneMeshVisualizer.cs" />
-    <Compile Include="Assets\Starter Package\ReticleBehaviour.cs" />
-    <Compile Include="Assets\Starter Package\LightEstimation.cs" />
-    <Compile Include="Assets\Starter Package\CarManager.cs" />
-    <Compile Include="Assets\Starter Package\PackageBehaviour.cs" />
-    <Compile Include="Assets\Starter Package\DrivingSurfaceManager.cs" />
-    <Compile Include="Assets\Scripts\Paintings.cs" />
+    <Compile Include="Assets\Scripts\PlaneFinder.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Thalia.cs" />
-    <Compile Include="Assets\Starter Package\PackageSpawner.cs" />
-    <Compile Include="Assets\Starter Package\CarBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\StreamingAssets\Vuforia\PaintingsAM.xml" />

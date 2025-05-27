@@ -69,9 +69,6 @@
     <Compile Include="Assets\Editor\Migration\AddVuforiaEnginePackage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Editor\Vuforia\CylinderTargetTextures\VuforiaMars_Images\authoringinfo.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
       <Private>False</Private>
