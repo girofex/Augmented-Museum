@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class Thalia : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject[] targets;
+
+    private string currentTarget = null;
+
+    void Awake()
     {
-        
+        gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetActiveTarget(string targetName)
     {
-        
+        currentTarget = targetName;
+        gameObject.SetActive(true);
+    }
+
+    public void ClearActiveTarget(string targetName)
+    {
+        if(currentTarget == targetName){
+            currentTarget = null;
+
+            gameObject.SetActive(false);
+        }
     }
 }
