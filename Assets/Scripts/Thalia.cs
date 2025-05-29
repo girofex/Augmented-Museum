@@ -3,7 +3,6 @@ using UnityEngine;
 public class Thalia : MonoBehaviour
 {
     public GameObject[] targets;
-
     private string currentTarget = null;
 
     void Awake()
