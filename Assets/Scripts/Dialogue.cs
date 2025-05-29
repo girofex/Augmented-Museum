@@ -10,12 +10,13 @@ public class Dialogue : MonoBehaviour
     public AudioClip[] audioClips;
     private string lastPlayed, currentTarget = null;
 
-    void Awake()
+    private IEnumerator Delay()
     {
-        new WaitForSeconds(1.5f);
         dialogue.gameObject.SetActive(true);
         text.text = "Hello there, I'm the muse Thalia.\nFrame a painting and I will appear to tell you more about its story.";
-        StartCoroutine(PlayAudio(0));
+
+        yield return new WaitForSeconds(1f);
+        yield return StartCoroutine(PlayAudio(0));
     }
 
     private IEnumerator PlayAudio(int index)
@@ -27,6 +28,11 @@ public class Dialogue : MonoBehaviour
 
         if (index == 0)
             dialogue.gameObject.SetActive(false);
+    }
+
+    void Start()
+    {
+        StartCoroutine(Delay());
     }
 
     public void SetActiveTarget(string targetName)

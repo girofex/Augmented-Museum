@@ -3,7 +3,6 @@ using UnityEngine;
 public class AugmentationManager : MonoBehaviour
 {
     public GameObject[] representations;
-
     private string currentTarget = null;
 
     void Awake()
