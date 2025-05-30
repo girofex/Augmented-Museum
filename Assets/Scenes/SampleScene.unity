@@ -459,16 +459,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123318686}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1061942399}
   - {fileID: 1711552746}
   - {fileID: 1771424158}
   - {fileID: 1645437299}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1896962448}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &127852034
 PrefabInstance:
@@ -8650,6 +8650,7 @@ GameObject:
   - component: {fileID: 1896962447}
   - component: {fileID: 1896962446}
   - component: {fileID: 1896962449}
+  - component: {fileID: 1896962450}
   m_Layer: 0
   m_Name: Ground Plane Stage
   m_TagString: Untagged
@@ -8730,11 +8731,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896962444}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 123318688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1896962449
@@ -8754,6 +8756,24 @@ MonoBehaviour:
   mTargetName: 
   mDatasetName: 
   mCastedBehaviour: {fileID: 1896962447}
+--- !u!114 &1896962450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896962444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2020821747, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnchorStage: {fileID: 1896962447}
+  DuplicateStage: 1
+  OnContentPlaced:
+    m_PersistentCalls:
+      m_Calls: []
+  mDisplayAdvanced: 0
 --- !u!1001 &1898726404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9792,4 +9812,3 @@ SceneRoots:
   - {fileID: 1253782058}
   - {fileID: 1203922937}
   - {fileID: 1896962448}
-  - {fileID: 123318688}
