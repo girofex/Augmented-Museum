@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Thalia : MonoBehaviour
 {
-    public GameObject[] targets;
     private string currentTarget = null;
 
     void Awake()
@@ -20,7 +19,6 @@ public class Thalia : MonoBehaviour
     {
         if(currentTarget == targetName){
             currentTarget = null;
-
             gameObject.SetActive(false);
         }
     }

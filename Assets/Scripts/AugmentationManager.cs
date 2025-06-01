@@ -3,6 +3,7 @@ using UnityEngine;
 public class AugmentationManager : MonoBehaviour
 {
     public GameObject[] representations;
+    private GameObject currentRep = null;
     private string currentTarget = null;
 
     void Awake()
@@ -13,21 +14,36 @@ public class AugmentationManager : MonoBehaviour
 
     public void SetActiveTarget(string targetName)
     {
-        if(currentTarget == targetName) return;
+        if (currentTarget == targetName)
+            return;
 
         currentTarget = targetName;
 
+        if(currentRep != null)
+            currentRep.SetActive(false);
+
         foreach (var rep in representations)
-            rep.SetActive(rep.name.Contains(targetName));
+        {
+            if (rep.name.Contains(targetName))
+            {
+                rep.SetActive(true);
+                currentRep = rep;
+                break;
+            }
+        }
     }
 
     public void ClearActiveTarget(string targetName)
     {
-        if(currentTarget == targetName){
+        if (currentTarget == targetName)
+        {
             currentTarget = null;
 
-            foreach(var rep in representations)
-                rep.SetActive(false);
+            if (currentRep != null)
+            {
+                currentRep.SetActive(false);
+                currentRep = null;
+            }
         }
     }
 }

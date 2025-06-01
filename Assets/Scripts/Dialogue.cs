@@ -10,15 +10,6 @@ public class Dialogue : MonoBehaviour
     public AudioClip[] audioClips;
     private string lastPlayed, currentTarget = null;
 
-    private IEnumerator Delay()
-    {
-        dialogue.gameObject.SetActive(true);
-        text.text = "Hello there, I'm the muse Thalia.\nFrame a painting and I will appear to tell you more about its story.";
-
-        yield return new WaitForSeconds(1f);
-        yield return StartCoroutine(PlayAudio(0));
-    }
-
     private IEnumerator PlayAudio(int index)
     {
         audioSource.clip = audioClips[index];
@@ -30,8 +21,17 @@ public class Dialogue : MonoBehaviour
             dialogue.gameObject.SetActive(false);
     }
 
+    private IEnumerator Delay()
+    {
+        yield return new WaitUntil(() => PlaneFinder.placed);
+
+        text.text = "Hello there, I'm the muse Thalia.\nFrame a painting and I will appear to tell you more about its story.";
+        yield return PlayAudio(0);
+    }
+    
     void Start()
     {
+        text.text = "Look at the floor to start";
         StartCoroutine(Delay());
     }
 
@@ -40,9 +40,7 @@ public class Dialogue : MonoBehaviour
         if (targetName == lastPlayed) 
             return;
 
-        currentTarget = targetName;
-        lastPlayed = targetName;
-
+        currentTarget = lastPlayed = targetName;
         dialogue.gameObject.SetActive(true);
 
         switch (currentTarget)
@@ -74,9 +72,8 @@ public class Dialogue : MonoBehaviour
     {
         if (currentTarget == targetName)
         {
-            currentTarget = null;
+            currentTarget = lastPlayed = null;
             dialogue.gameObject.SetActive(false);
-            lastPlayed = null;
         }
     }
 }

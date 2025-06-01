@@ -11,32 +11,30 @@ public class ImageTarget : MonoBehaviour
     void Start()
     {
         observerBehaviour = GetComponent<ObserverBehaviour>();
-        if (observerBehaviour)
-            observerBehaviour.OnTargetStatusChanged += OnTargetStatusChanged;
+        if (observerBehaviour != null)
+            observerBehaviour.OnTargetStatusChanged += HandleTargetStatusChanged;
     }
 
-    private void OnDestroy()
+    void OnDestroy()
     {
-        if (observerBehaviour)
-            observerBehaviour.OnTargetStatusChanged -= OnTargetStatusChanged;
+        if (observerBehaviour != null)
+            observerBehaviour.OnTargetStatusChanged -= HandleTargetStatusChanged;
     }
 
-    private void OnTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
+    private void HandleTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
     {
         string targetName = behaviour.TargetName;
 
-        if (manager == null) return;
-
         if (status.Status == Status.TRACKED || status.Status == Status.EXTENDED_TRACKED)
         {
-            manager.SetActiveTarget(behaviour.TargetName);
+            manager.SetActiveTarget(targetName);
             thalia.SetActiveTarget(targetName);
             dialogue.SetActiveTarget(targetName);
         }
 
         else if (status.Status == Status.NO_POSE)
         {
-            manager.ClearActiveTarget(behaviour.TargetName);
+            manager.ClearActiveTarget(targetName);
             thalia.ClearActiveTarget(targetName);
             dialogue.ClearActiveTarget(targetName);
         }

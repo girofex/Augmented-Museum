@@ -3,6 +3,9 @@ using Vuforia;
 
 public class PlaneFinder : MonoBehaviour
 {
+    public GameObject museum;
+    public static bool placed { get; private set; } = false;
+
     private PlaneFinderBehaviour planeFinder;
     private ContentPositioningBehaviour contentPositioning;
 
@@ -10,14 +13,20 @@ public class PlaneFinder : MonoBehaviour
     {
         planeFinder = GetComponent<PlaneFinderBehaviour>();
         contentPositioning = GetComponent<ContentPositioningBehaviour>();
+        museum.SetActive(false);
 
         if (planeFinder != null)
-            planeFinder.OnInteractiveHitTest.AddListener(OnHitTest);
+            planeFinder.OnAutomaticHitTest.AddListener(OnHitTest);
     }
 
     void OnHitTest(HitTestResult result)
     {
-        if (contentPositioning != null)
-            contentPositioning.PositionContentAtPlaneAnchor(result);
+        if (placed || contentPositioning == null)
+            return;
+
+        contentPositioning.PositionContentAtPlaneAnchor(result);
+
+        museum.SetActive(true);
+        placed = true;
     }
 }
