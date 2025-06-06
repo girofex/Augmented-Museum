@@ -5,7 +5,6 @@ public class ImageTarget : MonoBehaviour
 {
     private ObserverBehaviour observerBehaviour;
     public AugmentationManager manager;
-    public Thalia thalia;
     public Dialogue dialogue;
 
     void Start()
@@ -28,14 +27,12 @@ public class ImageTarget : MonoBehaviour
         if (status.Status == Status.TRACKED || status.Status == Status.EXTENDED_TRACKED)
         {
             manager.SetActiveTarget(targetName);
-            thalia.SetActiveTarget(targetName);
             dialogue.SetActiveTarget(targetName);
         }
 
         else if (status.Status == Status.NO_POSE)
         {
             manager.ClearActiveTarget(targetName);
-            thalia.ClearActiveTarget(targetName);
             dialogue.ClearActiveTarget(targetName);
         }
     }

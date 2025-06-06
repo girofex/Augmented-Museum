@@ -8,7 +8,8 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI text;
     public AudioSource audioSource;
     public AudioClip[] audioClips;
-    private string lastPlayed, currentTarget = null;
+    public Muse muse;
+    private string lastPlayed, currentTarget, currentMuse = null;
 
     private IEnumerator PlayAudio(int index)
     {
@@ -25,8 +26,7 @@ public class Dialogue : MonoBehaviour
     {
         yield return new WaitUntil(() => PlaneFinder.placed);
 
-        text.text = "Hello there, I'm the muse Thalia.\nFrame a painting and I will appear to tell you more about its story.";
-        yield return PlayAudio(0);
+        text.text = "Frame a painting and the muses will appear to tell you more about its story.";
     }
     
     void Start()
@@ -47,23 +47,33 @@ public class Dialogue : MonoBehaviour
         {
             case "dali":
                 text.text = "The Persistence of Memory by Salvador Dalì: as said by the author, the watches are inspired by the surrealist perception of a Camembert melting in the sun.\nIn the middle, we have a self-portrait.\nThe ants on the orange watch are a symbol of decay.\nWe also have a reference to his homeland, Catalonia.";
-                StartCoroutine(PlayAudio(1));
-                break;
-            case "friedrich":
-                text.text = "Wanderer above the Sea of Fog by Caspar David Friedrich: the painting is an emblem of self-reflection and contemplation of life's path, as the landscape is considered to evoke the sublime.\nIt has also been interpreted as an expression of Friedrich's German liberal and nationalist feeling.";
-                StartCoroutine(PlayAudio(2));
+                currentMuse = "Euterpe";
+                muse.SetActiveTarget(currentMuse);
+                StartCoroutine(PlayAudio(0));
                 break;
             case "gentileschi":
                 text.text = "Corisca and the Satyr by Artemisia Gentileschi: the satyr attemps to rape Corisca, but he can only clutch to her hairpiece.\nMany interpretations link this content to Gentileschi's own rape by her art teacher, which changed her life and artistic process.";
-                StartCoroutine(PlayAudio(3));
+                currentMuse = "Melpomene";
+                muse.SetActiveTarget(currentMuse);
+                StartCoroutine(PlayAudio(1));
                 break;
-            case "kahlo":
-                text.text = "Self Portrait with Thorn Necklace and Hummingbird by Frida Kahlo: Frida spent most of her life in physical pain after a bus accident, which led to about thirty-five operations and inability to have children.\nThis painting accurately depicts her suffering.";
-                StartCoroutine(PlayAudio(4));
+            case "monet":
+                text.text = "Water Lilies by Claude Monet: part of a series of approximately 250 oil paintings.\nIt depicts his flower garden at his home in Giverny, main focus of his artistic production during the last 31 years of his life.\nAs said by the author “One instant, one aspect of nature contains it all”.";
+                currentMuse = "Thalia";
+                muse.SetActiveTarget(currentMuse);
+                StartCoroutine(PlayAudio(2));
+                break;
+            case "mucha":
+                text.text = "The Four Seasons by Alphonse Mucha: this was his first set of decorative panels.\nThe nymph-like women against the seasonal views of the countryside breathed new life into the classic theme.\nMucha captures the moods of the seasons - innocent Spring, sultry Summer, fruitful Autumn and frosty Winter.";
+                currentMuse = "Terpsichore";
+                muse.SetActiveTarget(currentMuse);
+                StartCoroutine(PlayAudio(3));
                 break;
             case "warhol":
                 text.text = "The Last Supper by Andy Warhol: one of the 100 variations of the original painting by Leonardo, which indicates Warhol's profound religious faith.\nWarhol used a black and white photograph and an encyclopedic illustration of the original work.\nThe former served as model for the silkscreens, the latter for the handdrawn tracing paintings.";
-                StartCoroutine(PlayAudio(5));
+                currentMuse = "Urania";
+                muse.SetActiveTarget(currentMuse);
+                StartCoroutine(PlayAudio(4));
                 break;
         }
     }
@@ -74,6 +84,12 @@ public class Dialogue : MonoBehaviour
         {
             currentTarget = lastPlayed = null;
             dialogue.gameObject.SetActive(false);
+
+            if (currentMuse != null)
+            {
+                muse.ClearActiveTarget(currentMuse);
+                currentMuse = null;
+            }
         }
     }
 }
