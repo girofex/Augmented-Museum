@@ -1,6 +1,7 @@
 ## Introduction
 
-For the Augmented Museum project, my concept was to design a small building, representing the museum.  
+This project had the purpose of creating an augmented museum with Unity.  
+My concept was to design a small building, representing the museum.  
 The scene begins with a dialogue telling the user to look at the floor to start the experience.  
 Once ground detection is complete, the interior of the museum appears directly onto the detected surface, and an empty picture frame is displayed in front of the user.  
 A dialogue tells to scan a real-world painting, which triggers the appearance of its virtual representation inside the frame, a virtual muse and a dialogue with the related information.
