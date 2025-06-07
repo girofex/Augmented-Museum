@@ -1,5 +1,3 @@
-# Augmented Museum
-
 ## Introduction
 
 For the Augmented Museum project, my concept was to design a small building, representing the museum.  
