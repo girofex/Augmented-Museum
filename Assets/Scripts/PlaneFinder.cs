@@ -16,10 +16,10 @@ public class PlaneFinder : MonoBehaviour
         museum.SetActive(false);
 
         if (planeFinder != null)
-            planeFinder.OnAutomaticHitTest.AddListener(OnHitTest);
+            planeFinder.OnAutomaticHitTest.AddListener(Place);
     }
 
-    void OnHitTest(HitTestResult result)
+    void Place(HitTestResult result)
     {
         if (placed || contentPositioning == null)
             return;

@@ -218,8 +218,8 @@ MonoBehaviour:
     y: 0
     width: 1117
     height: 593
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 0
     width: 494
     height: 933
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -356,7 +356,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 7a70ffff9270ffff8a75ffff5877ffff5278ffffd287ffffea87ffffe28cffffb08effffaa8fffff789fffff909fffff88a4ffff56a6ffff50a7ffff42bbffff5abbffff4ec0ffff1cc2ffff12c3ffff3ee4fffff6f0ffff1afbffff52b400009ab40000b0b40000f0b400001cb5000006b600008ab60000a4b7000008e0000066e000009ae200000ce400003cfb00006cfb0000cefd000040ff0000121601004216010070160100a4180100161a0100
+      m_ExpandedIDs: 5cebffff74ebffff6cf0ffff3ef2ffff38f3ffff04fbffffc2bd0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -904,9 +904,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -4.432741, y: 7.6766133, z: 1.6589329}
+    m_Target: {x: -10.347064, y: -6.643653, z: -3.6116538}
     speed: 2
-    m_Value: {x: -4.432741, y: 7.6766133, z: 1.6589329}
+    m_Value: {x: -10.347064, y: -6.643653, z: -3.6116538}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -952,13 +952,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.17285159, y: -0.76829773, z: 0.23261519, w: 0.5708187}
+    m_Target: {x: 0.22189152, y: -0.735348, z: 0.28440353, w: 0.57386917}
     speed: 2
-    m_Value: {x: 0.17284271, y: -0.7682583, z: 0.23260324, w: 0.5707894}
+    m_Value: {x: 0.22187115, y: -0.7352805, z: 0.28437743, w: 0.5738165}
   m_Size:
-    m_Target: 0.41684508
+    m_Target: 11.621645
     speed: 2
-    m_Value: 0.41684508
+    m_Value: 11.621645
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1142,7 +1142,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1152,16 +1152,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 56
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: 56
   m_LastProjectPath: D:\Users\Federica\Documents\Augmented Museum
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: f8c10000
-    m_LastClickedID: 49656
-    m_ExpandedIDs: 0000000074c10000f0c10000f2c10000fcc10000fec100000ac300001cc3000020c3000000ca9a3bffffff7f
+    m_SelectedIDs: 80c10000
+    m_LastClickedID: 49536
+    m_ExpandedIDs: 0000000080c1000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1190,7 +1190,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000074c10000
+    m_ExpandedIDs: 0000000080c10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000d8810000f0c80000feb0000014b100006c460000e4050100e6fd0000000000003cb70000f4e9fdff
     m_RenameOverlay:
       m_UserAcceptedRename: 0

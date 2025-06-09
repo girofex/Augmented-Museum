@@ -11,16 +11,16 @@ public class ImageTarget : MonoBehaviour
     {
         observerBehaviour = GetComponent<ObserverBehaviour>();
         if (observerBehaviour != null)
-            observerBehaviour.OnTargetStatusChanged += HandleTargetStatusChanged;
+            observerBehaviour.OnTargetStatusChanged += StatusChanged;
     }
 
     void OnDestroy()
     {
         if (observerBehaviour != null)
-            observerBehaviour.OnTargetStatusChanged -= HandleTargetStatusChanged;
+            observerBehaviour.OnTargetStatusChanged -= StatusChanged;
     }
 
-    private void HandleTargetStatusChanged(ObserverBehaviour behaviour, TargetStatus status)
+    private void StatusChanged(ObserverBehaviour behaviour, TargetStatus status)
     {
         string targetName = behaviour.TargetName;
 
