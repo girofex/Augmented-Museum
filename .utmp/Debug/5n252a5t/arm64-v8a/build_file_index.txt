@@ -1,2 +1,0 @@
-D:\Users\Federica\Documents\GitHub\Augmented-Museum\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
-D:\Users\Federica\Documents\GitHub\Augmented-Museum\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
