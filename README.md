@@ -30,7 +30,7 @@ A dialogue tells to scan a real-world painting, which triggers the appearance of
   </tr>
 </table>
 
-I chose 5 horizontal paintings, to be able to efficiently take advantage of the orientation of the picture frame:
+For the Image Targets, I chose 5 horizontal paintings, to be able to efficiently take advantage of the orientation of the picture frame:
 
 - *The Persistence of Memory* by Salvador Dalì
 - *Corisca and the Satyr* by Artemisia Gentileschi
