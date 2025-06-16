@@ -17,9 +17,6 @@ public class Dialogue : MonoBehaviour
         audioSource.Play();
 
         yield return new WaitWhile(() => audioSource.isPlaying);
-
-        if (index == 0)
-            dialogue.gameObject.SetActive(false);
     }
 
     private IEnumerator Delay()
